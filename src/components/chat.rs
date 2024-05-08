@@ -92,10 +92,7 @@ impl Component for Chat {
                             .iter()
                             .map(|u| UserProfile {
                                 name: u.into(),
-                                avatar: format!(
-                                    "https://avatars.dicebear.com/api/adventurer-neutral/{}.svg",
-                                    u
-                                )
+                                avatar: "https://api.dicebear.com/8.x/pixel-art/svg".to_string()
                                 .into(),
                             })
                             .collect();
@@ -140,8 +137,8 @@ impl Component for Chat {
 
         html! {
             <div class="flex w-screen">
-                <div class="flex-none w-56 h-screen bg-gray-100">
-                    <div class="text-xl p-3">{"Users"}</div>
+                <div class="flex-none w-56 h-screen bg-gray-800">
+                    <div class="text-xl p-3 text-white">{"Users"}</div>
                     {
                         self.users.clone().iter().map(|u| {
                             html!{
